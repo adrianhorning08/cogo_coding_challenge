@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: "./main/entry.jsx",
+  entry: "./main/scripts/entry.jsx",
     output: {
         path: __dirname,
-        filename: "./frontend/bundle.js"
+        filename: "./main/scripts/bundle.js"
     },
     mode: 'development',
     module: {
@@ -17,16 +17,6 @@ module.exports = {
             presets: ["react"]
           }
         },
-        {
-            test: /\.(png|jp(e*)g|svg)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8000, // Convert images < 8kb to base64 strings
-                    name: 'images/[hash]-[name].[ext]'
-                }
-            }]
-          }
       ],
     },
     resolve: {
