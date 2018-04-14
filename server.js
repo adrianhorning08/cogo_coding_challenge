@@ -3,6 +3,8 @@ const path = require('path')
 const bodyParser = require('body-parser');
 var app = express();
 
+app.use(express.static('main'))
+
 app.get('/', async (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
