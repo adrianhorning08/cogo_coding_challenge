@@ -14,7 +14,7 @@ module.exports = {
           loader: 'babel-loader',
           exclude: /node_modules/,
           query: {
-            presets: ["react"]
+            presets: ["react", "env"]
           }
         },
       ],
@@ -23,9 +23,5 @@ module.exports = {
       extensions: ['*', '.js', '.jsx']
     },
     devtool: 'source-maps',
-    watch: true,
-    devServer: {
-      port: 3000,
-      hot: true
-    }
+    watch: true
 };
