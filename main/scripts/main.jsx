@@ -9,20 +9,29 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    // const request = async () => {
-    //   const response = await fetch('http://itsthisforthat.com/api.php?json', {
-    //   });
-    //   const json = await response.json();
-    //   console.log(json);
-    // }
-    // request();
-  }
-  render() {
-    if (this.state.thisThat) {
-      return this.state.thisThat;
-    } else {
-      return null;
+    async function fetchContent() {
+      // Instead of using fetch().then, use await
+      let content = await fetch('/api');
+      let text = await content.text();
+
+      // Inside the async function text is the request body
+      console.log(text);
+
+      // Resolve this async function with the text
+      return text;
     }
+    
+    // fetch('/api')
+    // .then(function(response) {
+    //   return response.json();
+    // })
+    // .then(function(myJson) {
+    //   console.log(myJson);
+    // });
+  }
+
+  render() {
+    return 'hey';
   }
 }
 
