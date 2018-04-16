@@ -181,6 +181,7 @@ var Main = function (_React$Component) {
     _this.state = {
       thisThat: null
     };
+    _this.updateThisThat = _this.updateThisThat.bind(_this);
     return _this;
   }
 
@@ -221,10 +222,80 @@ var Main = function (_React$Component) {
       return componentDidMount;
     }()
   }, {
+    key: 'updateThisThat',
+    value: function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(e) {
+        var res, json;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                e.preventDefault();
+                _context2.next = 3;
+                return fetch('/api');
+
+              case 3:
+                res = _context2.sent;
+                _context2.next = 6;
+                return res.json();
+
+              case 6:
+                json = _context2.sent;
+                _context2.next = 9;
+                return this.setState({ thisThat: json });
+
+              case 9:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function updateThisThat(_x) {
+        return _ref2.apply(this, arguments);
+      }
+
+      return updateThisThat;
+    }()
+  }, {
     key: 'render',
     value: function render() {
       if (this.state.thisThat) {
-        return this.state.thisThat.that;
+        return _react2.default.createElement(
+          'div',
+          { className: 'center-container' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Wait, what does your startup do?'
+          ),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'So, basically, it\'s like a'
+          ),
+          _react2.default.createElement(
+            'h1',
+            null,
+            this.state.thisThat.this
+          ),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'for'
+          ),
+          _react2.default.createElement(
+            'h1',
+            null,
+            this.state.thisThat.that
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: this.updateThisThat },
+            'Refresh'
+          )
+        );
       } else {
         return null;
       }
