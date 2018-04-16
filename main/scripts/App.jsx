@@ -9,7 +9,7 @@ import {
 import Main from './main';
 
 const App = () => (
-    <div>
+    <div className="main-container">
       <Route exact path ="/" component={Main} />
     </div>
 );
