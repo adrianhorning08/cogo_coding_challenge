@@ -14,4 +14,4 @@
 * Used webpack to bundle files and used babel to transpile JS
 * Used React for front-end
 * In `componentDidMount` I make a request to `/api` to get the this/that pairing
-* When a user clicks refresh, `updateThisThat` will be called, which will make another request to the backend, just like `componentDidMount`
+* When a user clicks refresh button, `updateThisThat` will be called, which will make another request to the backend, just like `componentDidMount`
