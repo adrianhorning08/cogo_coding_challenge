@@ -1,7 +1,7 @@
 # cogo_coding_challenge
 
 ## How to Run
-1. Clone repo
+1. Unzip/Clone
 2. Run `npm install` to install dependencies
 3. Run `npm run` start the server
 4. Navigate to [local_host](http://localhost:3000)
